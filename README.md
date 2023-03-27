@@ -2,7 +2,10 @@
 
 ### A online library
 
-### To run the app : npm install => npm start
+### To run app
+1)npm install
+2)npm start
+
 ## Home Page
 ![Home page](https://res.cloudinary.com/radhekrishn/image/upload/v1679897798/1_dzdph9.jpg)
 ## Details Page
