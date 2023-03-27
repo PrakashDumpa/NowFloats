@@ -54,7 +54,7 @@ const Home = () => {
       <div className="text-center">
         <img
           className="w-50"
-          src="https://img.freepik.com/free-vector/computer-repair-illustration_1284-64457.jpg?w=4096&t=st=1679889736~exp=1679890336~hmac=eecd69540d2d29119ffd2b571acedc96b5fdebfb7973792a9fa306fbf2e04f0e"
+          src="https://img.freepik.com/free-vector/marketers-with-magnifier-research-marketing-opportunities-chart-marketing-research-marketing-analysis-market-opportunities-problems-concept_335657-821.jpg?size=626&ext=jpg&uid=R96247835&ga=GA1.2.2024764164.1678773257&semt=ais"
           alt="no match"
         />
       </div>
