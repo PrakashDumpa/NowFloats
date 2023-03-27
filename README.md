@@ -1,4 +1,4 @@
-# Nowfloat book store
+# Nowfloats book store
 
 ### A online library
 
