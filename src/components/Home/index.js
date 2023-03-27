@@ -70,17 +70,13 @@ const Home = () => {
     </div>
   );
 
-  const renderSuccessView = () => {
-    booksList.length !== 0 ? (
-      <ul className="list-unstyled cardsList_container ">
-        {booksList.map((each) => (
-          <BookItem key={each._id} bookInfo={each} />
-        ))}
-      </ul>
-    ) : (
-      notMatchView()
-    );
-  };
+  const renderSuccessView = () => (
+    <ul className="list-unstyled cardsList_container ">
+      {booksList.map((each) => (
+        <BookItem key={each._id} bookInfo={each} />
+      ))}
+    </ul>
+  );
 
   const renderInProgressView = () => (
     <div className="d-flex justify-content-center align-items-center vh-100">
