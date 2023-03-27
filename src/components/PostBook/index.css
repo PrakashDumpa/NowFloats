@@ -1,0 +1,19 @@
+.addBook_form_container {
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.addBookContainer {
+  background-color: #e5edf3;
+}
+
+.dialogParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(146, 139, 139, 0.4);
+}
+
+.loadingContainer {
+  background: transparent;
+}

@@ -1,0 +1,18 @@
+.book_card {
+  border-radius: 10px;
+  border: 1px solid #b7bdba;
+  background-color: #f2f6f7;
+  display: flex;
+  padding: 15px 15px 15px 0px;
+}
+
+.image_Container {
+  height: 200px;
+}
+
+.flexGrow {
+  flex-grow: 1;
+}
+.headingColor {
+  color: #1a237e;
+}
