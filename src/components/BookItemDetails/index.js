@@ -20,7 +20,8 @@ const BookItemDetails = () => {
   const getBookDetails = async () => {
     setApiResponse(apiResponseStatus.inProgress);
 
-    const url = `http://localhost:5000/book/${id}`;
+    // const url = `http://localhost:5000/book/${id}`;
+    const url = `https://nowfloatsbackend-i28c.onrender.com/book/${id}`;
     const options = {
       method: "GET",
       headers: {
