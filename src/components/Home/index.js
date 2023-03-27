@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Loader from "react-loader-spinner";
 import BookItem from "../BookItem";
 import RenderFailureView from "../../FailureView";
+import Button from "@mui/material/Button";
 
 const apiResponseStatus = {
   initial: "INITIAL",
@@ -14,6 +15,7 @@ const apiResponseStatus = {
 const Home = () => {
   const [apiResponse, setApiResponse] = useState(apiResponseStatus.initial);
   const [booksList, setBooksList] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
   const getResultList = async () => {
     setApiResponse(apiResponseStatus.inProgress);
@@ -43,13 +45,42 @@ const Home = () => {
     getResultList();
   }, []);
 
-  const renderSuccessView = () => (
-    <ul className="list-unstyled cardsList_container ">
-      {booksList.map((each) => (
-        <BookItem key={each._id} bookInfo={each} />
-      ))}
-    </ul>
+  const onClickReSearchButton = () => {
+    setSearchInput("");
+  };
+
+  const notMatchView = () => (
+    <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+      <div className="text-center">
+        <img
+          className="w-50"
+          src="https://img.freepik.com/free-vector/computer-repair-illustration_1284-64457.jpg?w=4096&t=st=1679889736~exp=1679890336~hmac=eecd69540d2d29119ffd2b571acedc96b5fdebfb7973792a9fa306fbf2e04f0e"
+          alt="no match"
+        />
+      </div>
+      <h2 className="text-secondary">Oops! Something went wrong</h2>
+      <Button
+        variant="contained"
+        type="button"
+        className="mt-2 pr-5 pl-5"
+        onClick={onClickReSearchButton}
+      >
+        Retry
+      </Button>
+    </div>
   );
+
+  const renderSuccessView = () => {
+    booksList.length !== 0 ? (
+      <ul className="list-unstyled cardsList_container ">
+        {booksList.map((each) => (
+          <BookItem key={each._id} bookInfo={each} />
+        ))}
+      </ul>
+    ) : (
+      notMatchView()
+    );
+  };
 
   const renderInProgressView = () => (
     <div className="d-flex justify-content-center align-items-center vh-100">
@@ -81,6 +112,8 @@ const Home = () => {
                 type="search"
                 className="form-control p-3"
                 placeholder="Search"
+                onChange={(event) => setSearchInput(event.target.value)}
+                value={searchInput}
               />
               <div className="input-group-prepend">
                 <span className="input-group-text" id="basic-addon1">
