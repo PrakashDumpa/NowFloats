@@ -53,6 +53,7 @@ const PostBook = () => {
     };
     try {
       const response = await fetch(url, options);
+
       if (response.ok) {
         setApiResponse(apiResponseStatus.success);
       } else {
@@ -85,8 +86,11 @@ const PostBook = () => {
   const uploadImage = async (event) => {
     const file = event.target.files[0];
     setImage(file);
-    const decodedFile = await convertToBase64(file);
-    setInputImage(decodedFile);
+    console.log("File", file);
+    setInputImage(URL.createObjectURL(file));
+    // const decodedFile = await convertToBase64(file);
+    // console.log("decodedFile", decodedFile);
+    // setInputImage(decodedFile);
   };
 
   const renderSuccessView = () => (
