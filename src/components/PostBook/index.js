@@ -89,7 +89,7 @@ const PostBook = () => {
     // // console.log("File", file);
     // setInputImage(URL.createObjectURL(file));
     const decodedFile = await convertToBase64(file);
-    console.log("decodedFile", decodedFile);
+    // console.log("decodedFile", decodedFile);
     setInputImage(decodedFile);
   };
 
