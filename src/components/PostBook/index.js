@@ -86,11 +86,11 @@ const PostBook = () => {
   const uploadImage = async (event) => {
     const file = event.target.files[0];
     setImage(file);
-    console.log("File", file);
-    setInputImage(URL.createObjectURL(file));
-    // const decodedFile = await convertToBase64(file);
-    // console.log("decodedFile", decodedFile);
-    // setInputImage(decodedFile);
+    // // console.log("File", file);
+    // setInputImage(URL.createObjectURL(file));
+    const decodedFile = await convertToBase64(file);
+    console.log("decodedFile", decodedFile);
+    setInputImage(decodedFile);
   };
 
   const renderSuccessView = () => (
